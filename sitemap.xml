@@ -7,36 +7,4 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- 2. 醫師介紹 (Doctor Profile / About) -->
-  <url>
-    <loc>https://drwenspine.com/#about</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 3. 核心治療項目 (Treatments / Services) -->
-  <url>
-    <loc>https://drwenspine.com/#treatments</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://drwenspine.com/#services</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 4. 門診時間與交通資訊 (Clinic Info / Location) -->
-  <url>
-    <loc>https://drwenspine.com/#clinics</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
 </urlset>
