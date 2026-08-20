@@ -128,7 +128,7 @@
   .tx .more{display:inline-block;margin-top:12px;font-weight:700;color:var(--teal-dark);font-size:.92rem;}
 
   /* 治療故事 */
-  .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:720px;margin:0 auto;}
   .story{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:.25s;}
   .story:hover{transform:translateY(-5px);}
   .story .thumb{height:120px;display:flex;align-items:center;justify-content:center;font-size:2.4rem;color:#fff;}
@@ -241,7 +241,12 @@
             <li><a href="pages/tx-osteo.html">骨質疏鬆與骨折風險治療</a></li>
           </ul>
         </li>
-        <li><a href="#stories">治療故事</a></li>
+        <li class="has-sub"><a href="#stories">治療故事</a>
+          <ul class="sub">
+            <li><a href="pages/story-lumbar.html">腰椎微創手術案例</a></li>
+            <li><a href="pages/story-cervical.html">頸椎微創手術案例</a></li>
+          </ul>
+        </li>
         <li><a href="#clinics" class="nav-cta">預約諮詢</a></li>
       </ul>
     </nav>
@@ -545,10 +550,6 @@
         <div class="thumb">🧠</div>
         <div class="body"><h3>頸椎微創手術案例</h3><p>跌倒後四肢無力，接受頸椎減壓與人工椎間盤置換後逐步恢復。</p><span class="more">閱讀案例 →</span></div>
       </a>
-      <div class="story">
-        <div class="thumb">💉</div>
-        <div class="body"><h3>骨水泥手術案例</h3><p>案例內容整理中，敬請期待。</p><span class="soon">COMING SOON</span></div>
-      </div>
     </div>
   </div>
 </section>

@@ -53,7 +53,7 @@
     body{padding-bottom:64px;}
     .topbar .container span:first-child{display:none;}
   }
-.hero{background:linear-gradient(120deg,var(--dark),var(--navy),#008b8b);color:#fff;padding:64px 20px}.hero-inner{max-width:900px;margin:auto}.crumb{color:#cfe4f5;font-size:.85rem;margin-bottom:18px}.hero h1{font-size:2.5rem;line-height:1.4}.hero p{color:#cfe4f5;margin-top:10px}.layout{max-width:1000px;margin:auto;padding:48px 24px}.layout article{max-width:780px;margin:auto}h2{color:var(--navy);font-size:1.55rem;border-left:5px solid var(--teal);padding-left:14px;margin:40px 0 14px}h2:first-child{margin-top:0}p{margin-bottom:15px}ul{list-style:none;margin:10px 0 22px}li{padding:7px 0 7px 28px;border-bottom:1px dashed #e8edf2;position:relative}li:before{content:"✓";color:var(--teal);position:absolute;left:2px;font-weight:bold}figure{margin:28px 0}figure img{width:100%;border-radius:14px;box-shadow:var(--shadow)}.note{background:#fff8e6;border:1px solid #e8d18a;border-radius:12px;padding:16px 20px;margin:25px 0}.close{color:#008b8b;text-align:center;font-weight:bold;font-size:1.2rem;margin-top:28px}.cta{background:linear-gradient(120deg,#008b8b,#00a8a8);color:#fff;text-align:center;padding:45px 20px}.cta a{display:inline-block;background:var(--gold);color:var(--dark);font-weight:bold;border-radius:99px;padding:12px 28px;margin:8px}footer{background:var(--dark);color:#9db4c8;text-align:center;padding:28px 20px;font-size:.85rem}@media(max-width:760px){.links a:not(.back){display:none}.hero h1{font-size:1.7rem}.nav{padding:0 20px}.layout{padding:30px 20px}}
+.hero{background:linear-gradient(120deg,var(--dark),var(--navy),#008b8b);color:#fff;padding:64px 20px}.hero-inner{max-width:900px;margin:auto}.crumb{color:#cfe4f5;font-size:.85rem;margin-bottom:18px}.hero h1{font-size:2.5rem;line-height:1.4}.hero p{color:#cfe4f5;margin-top:10px}.layout{max-width:1000px;margin:auto;padding:48px 24px}.layout article{max-width:780px;margin:auto}h2{color:var(--navy);font-size:1.55rem;border-left:5px solid var(--teal);padding-left:14px;margin:40px 0 14px}h2:first-child{margin-top:0}p{margin-bottom:15px}ul{list-style:none;margin:10px 0 22px}article li{padding:7px 0 7px 28px;border-bottom:1px dashed #e8edf2;position:relative}article li:before{content:"✓";color:var(--teal);position:absolute;left:2px;font-weight:bold}figure{margin:28px 0}figure img{width:100%;border-radius:14px;box-shadow:var(--shadow)}.note{background:#fff8e6;border:1px solid #e8d18a;border-radius:12px;padding:16px 20px;margin:25px 0}.close{color:#008b8b;text-align:center;font-weight:bold;font-size:1.2rem;margin-top:28px}.cta{background:linear-gradient(120deg,#008b8b,#00a8a8);color:#fff;text-align:center;padding:45px 20px}.cta a{display:inline-block;background:var(--gold);color:var(--dark);font-weight:bold;border-radius:99px;padding:12px 28px;margin:8px}footer{background:var(--dark);color:#9db4c8;text-align:center;padding:28px 20px;font-size:.85rem}@media(max-width:760px){.links a:not(.back){display:none}.hero h1{font-size:1.7rem}.nav{padding:0 20px}.layout{padding:30px 20px}}
 </style>
 </head>
 <body>
@@ -68,7 +68,7 @@
 <!-- 導覽列 -->
 <header>
   <div class="container nav">
-    <a class="brand" href="../index.html#home"><b>文宏裕 醫師</b><span>脊椎神經外科</span></a>
+    <div class="brand"><b>文宏裕 醫師</b><span>脊椎神經外科</span></div>
     <button class="menu-btn" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
     <nav>
       <ul id="menu">
@@ -96,7 +96,12 @@
             <li><a href="tx-osteo.html">骨質疏鬆與骨折風險治療</a></li>
           </ul>
         </li>
-        <li><a href="../index.html#stories">治療故事</a></li>
+        <li class="has-sub"><a href="../index.html#stories">治療故事</a>
+          <ul class="sub">
+            <li><a href="story-lumbar.html">腰椎微創手術案例</a></li>
+            <li><a href="story-cervical.html">頸椎微創手術案例</a></li>
+          </ul>
+        </li>
         <li><a href="../index.html#clinics" class="nav-cta">預約諮詢</a></li>
       </ul>
     </nav>
@@ -135,10 +140,31 @@
 
 <script>
 (function(){
+  var header = document.querySelector('header');
+
+  // 點下拉選單連結：若目標是折疊卡(details)則自動展開，並補償置頂導覽列高度捲動
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var id = this.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if(!target) return;
+      e.preventDefault();
+      // 收合手機版選單
+      document.getElementById('menu').classList.remove('open');
+      document.querySelectorAll('nav li.has-sub.open').forEach(function(li){li.classList.remove('open');});
+      // 若是 details 折疊卡，自動展開
+      if(target.tagName === 'DETAILS') target.open = true;
+      var y = target.getBoundingClientRect().top + window.pageYOffset - header.offsetHeight - 12;
+      window.scrollTo({top: y, behavior: 'smooth'});
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+
+  // 手機版：點「主治項目/專業治療/治療故事」先展開子選單，再點一次才前往該區
   function isMobile(){ return window.matchMedia('(max-width:900px)').matches; }
   document.querySelectorAll('nav li.has-sub > a').forEach(function(a){
     a.addEventListener('click', function(e){
-      if(!isMobile()) return;
+      if(!isMobile()) return; // 桌機用 hover，不攔截
       var li = this.parentElement;
       if(!li.classList.contains('open')){
         e.preventDefault();
@@ -148,6 +174,12 @@
       }
     }, true);
   });
+
+  // 直接以 #hash 開啟頁面時，也自動展開對應折疊卡
+  if(location.hash){
+    var t = document.getElementById(location.hash.slice(1));
+    if(t && t.tagName === 'DETAILS') t.open = true;
+  }
 })();
 </script>
 
