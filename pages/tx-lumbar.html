@@ -94,6 +94,9 @@
   @media (max-width:700px){ article ul{grid-template-columns:1fr;} }
   article figure{margin:28px 0;}
   article figure img{border-radius:14px;box-shadow:var(--shadow);width:100%;}
+  article .intro-figure{float:left;width:min(42%,320px);margin:4px 30px 20px 0;}
+  article .intro-figure img{width:100%;}
+  article .intro-clear{clear:both;}
   article .warn{background:#fff3f0;border:1px solid #f3c1b4;color:#a4402a;border-radius:12px;padding:16px 20px;font-size:1rem;margin:16px 0;}
   article .close-line{color:var(--teal-dark);font-weight:700;text-align:center;font-size:1.25rem;margin-top:26px;}
 
@@ -130,6 +133,7 @@
   .pn a b{display:block;color:var(--teal-dark);font-size:.75rem;letter-spacing:.1em;margin-bottom:2px;}
   .pn a:last-child{text-align:right;}
   @media (max-width:700px){ .pn{padding:0 20px;flex-direction:column;} .pn a:last-child{text-align:left;} }
+  @media (max-width:760px){ article .intro-figure{float:none;width:min(100%,460px);margin:28px auto;} }
 
   /* 底部滿版 CTA */
   .cta-band{background:linear-gradient(120deg,var(--teal-dark),var(--teal));color:#fff;text-align:center;padding:56px 24px;margin-top:48px;}
@@ -209,13 +213,14 @@
 <!-- 左文右欄 -->
 <div class="layout">
   <article>
-<figure><img src="assets/tx-lumbar-hero.jpg" alt="微創腰椎手術示意圖片" loading="lazy"></figure>
+<figure class="intro-figure"><img src="assets/tx-lumbar-hero.jpg" alt="微創腰椎手術示意圖片" loading="lazy"></figure>
 <p>透過微創切口，精準解除神經壓迫；必要時重建脊椎穩定，幫助您擺脫腰痛腳麻，重獲行走自由。</p>
 <p>當腰椎因為退化、骨刺增生、椎間盤突出或關節鬆動滑脫，壓迫到神經或造成脊椎不穩定時，常會引發腰痛、屁股痠痛、腳麻、坐骨神經痛，甚至走沒幾步路就必須坐下或蹲下休息。</p>
 <p>很多患者一聽到「腰椎手術」，就擔心是不是一定要打骨釘、傷口很大、恢復很慢，甚至因此拖到腳麻越來越嚴重、走路越來越困難。</p>
 <p>其實，微創腰椎手術不是單一種手術，也不是每一位患者都需要固定融合。</p>
+<br><br><br>
 <p><b>真正重要的是判斷：</b></p>
-<ul><li>神經壓迫在哪裡？</li><li>脊椎結構穩不穩？</li><li>只需要減壓，還是需要同時重建穩定度？</li></ul>
+<ul><li>神經壓迫在哪裡？</li><li>脊椎結構穩不穩？</li><li>只需要減壓，還是需要同時重建穩定度？</li></ul><p class="intro-clear"></p>
 <p>相較於傳統較大傷口的腰椎手術，微創腰椎手術希望在達到治療目的的同時，減少對背部肌肉與正常組織的破壞。</p>
 <p><b>治療重點在於：</b></p>
 <p>精準減壓、最小破壞、必要時重建穩定。</p>
