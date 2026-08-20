@@ -94,6 +94,10 @@
   @media (max-width:700px){ article ul{grid-template-columns:1fr;} }
   article figure{margin:28px 0;}
   article figure img{border-radius:14px;box-shadow:var(--shadow);width:100%;}
+  article .cement-figure{float:left;width:min(48%,420px);margin:4px 30px 22px 0;}
+  article .cement-figure img{width:100%;}
+  article .cement-figure figcaption{color:var(--muted);font-size:.85rem;line-height:1.7;margin-top:8px;text-align:left;}
+  article .cement-clear{clear:both;}
   article .warn{background:#fff3f0;border:1px solid #f3c1b4;color:#a4402a;border-radius:12px;padding:16px 20px;font-size:1rem;margin:16px 0;}
   article .close-line{color:var(--teal-dark);font-weight:700;text-align:center;font-size:1.25rem;margin-top:26px;}
 
@@ -130,6 +134,7 @@
   .pn a b{display:block;color:var(--teal-dark);font-size:.75rem;letter-spacing:.1em;margin-bottom:2px;}
   .pn a:last-child{text-align:right;}
   @media (max-width:700px){ .pn{padding:0 20px;flex-direction:column;} .pn a:last-child{text-align:left;} }
+  @media (max-width:760px){ article .cement-figure{float:none;width:min(100%,460px);margin:28px auto;} article .cement-figure figcaption{text-align:center;} }
 
   /* 底部滿版 CTA */
   .cta-band{background:linear-gradient(120deg,var(--teal-dark),var(--teal));color:#fff;text-align:center;padding:56px 24px;margin-top:48px;}
@@ -209,7 +214,6 @@
 <!-- 左文右欄 -->
 <div class="layout">
   <article>
-<figure><img src="assets/tx-cement-updated/tx-cement-000.jpg" alt="骨水泥手術與椎體撐開術說明" loading="lazy"></figure>
 <p>透過針孔大小的微創傷口，穩定骨折椎體，幫助長輩減少疼痛、重新站起來。</p>
 <p>當脊椎因骨質疏鬆、跌倒或外傷發生壓迫性骨折時，最讓人害怕的不是影像上看到一節骨頭塌陷，而是痛到無法翻身、起床、站立，甚至因此長期臥床。</p>
 <p>更需要注意的是，如果骨折持續塌陷、骨折處不穩定，或骨折碎片往神經管方向移位，就可能壓迫神經或脊髓，造成腳麻、腳無力、走路困難；嚴重時甚至有癱瘓風險。</p>
@@ -240,8 +244,10 @@
 <p>氣囊，是先撐開再填補。</p>
 <p>千斤頂，是撐開後留下支撐，再加強穩定。</p>
 <h2>骨水泥術式快速比較</h2>
-<div class="tbl-wrap"><table><tr><th>比較項目</th><th>微創骨水泥椎體成形術</th><th>氣囊椎體撐開術</th><th>脊椎千斤頂椎體撐開術</th></tr><tr><td>治療概念</td><td>骨水泥直接注入，穩定骨折椎體</td><td>氣囊撐開後，再填入骨水泥</td><td>撐開後留下支架，再填入骨水泥</td></tr><tr><td>支撐方式</td><td>骨水泥固定</td><td>骨水泥固定，並建立空腔</td><td>內部支架加骨水泥支撐</td></tr><tr><td>椎體高度改善</td><td>以穩定止痛為主</td><td>有機會部分改善高度</td><td>高度恢復與維持支撐較有優勢</td></tr><tr><td>局部駝背矯正</td><td>幫助有限</td><td>可部分改善</td><td>較適合需要角度矯正與結構重建者</td></tr><tr><td>適合對象</td><td>輕度至中度塌陷、新鮮骨折</td><td>中度塌陷、希望降低滲漏風險者</td><td>塌陷明顯、結構支撐需求較高者</td></tr><tr><td>傷口大小</td><td>約針孔大小傷口</td><td>小傷口微創方式</td><td>小傷口微創方式</td></tr><tr><td>費用概念</td><td>符合條件可評估健保給付或自費材料</td><td>多屬自費醫材</td><td>多屬自費醫材，依使用系統與節數而異</td></tr></table></div>
+<div class="tbl-wrap"><table><tr><th>比較項目</th><th>微創骨水泥椎體成形術</th><th>氣囊椎體撐開術</th><th>脊椎千斤頂椎體撐開術</th></tr><tr><td>治療概念</td><td>骨水泥直接注入，穩定骨折椎體</td><td>氣囊撐開後，再填入骨水泥</td><td>撐開後留下支架，再填入骨水泥</td></tr><tr><td>支撐方式</td><td>骨水泥固定</td><td>骨水泥固定，並建立空腔</td><td>內部支架加骨水泥支撐</td></tr><tr><td>椎體高度改善</td><td>以穩定止痛為主</td><td>有機會部分改善高度</td><td>高度恢復與維持支撐較有優勢</td></tr><tr><td>局部駝背矯正</td><td>幫助有限</td><td>可部分改善</td><td>較適合需要角度矯正與結構重建者</td></tr><tr><td>適合對象</td><td>輕度至中度塌陷、新鮮骨折</td><td>中度塌陷、希望降低滲漏風險者</td><td>塌陷明顯、結構支撐需求較高者</td></tr><tr><td>傷口大小</td><td>約針孔大小傷口</td><td>小傷口微創方式</td><td>小傷口微創方式</td></tr><tr><td>費用概念</td><td>符合條件可評估健保給付或自費材料</td><td>多屬自費醫材，約9萬元</td><td>多屬自費醫材，依使用系統與節數而異。約13～26萬。</td></tr></table></div>
 <p>實際費用仍需依照醫院收費、健保條件、使用材料與治療節數評估。</p>
+<figure class="cement-figure"><img src="assets/tx-cement-updated/tx-cement-000.jpg" alt="千斤頂椎體撐開術與氣囊椎體撐開術影像" loading="lazy"><figcaption>上為千斤頂椎體撐開術，下為氣囊椎體撐開術。</figcaption></figure>
+<p class="cement-clear"></p>
 <h2>骨水泥手術的優點</h2>
 <p>骨水泥手術最大的價值，是在適合的患者身上，幫助減少疼痛、穩定骨折，讓患者有機會早一點恢復活動。</p>
 <p><b>常見優點包括：</b></p>
