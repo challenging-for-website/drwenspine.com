@@ -1,2 +1,5 @@
+2.tx-cement.html: （參考檔案：專業治療骨水泥手術.pdf）,照片位置不對，跑到最上面了，原檔位置應該是在下面，挪至下面後，請用文繞圖的方式呈現。
+3.tx-lumbar.html >> 第一張的照片(tx-lumbar-hero.jpg)，請設計用文繞圖的方式呈現。
+4.story-lumbar.html (參考檔案：治療故事_腰椎微創手術案例.pdf) >> 完整呈現文檔內容到 HTML file 中。
 5.story-cervical.html (參考檔案：治療方式_微創腰椎手術.jpg) >> 沒有完整呈現內容，然後照片的大小調整是當一點。
-6.index.html 將下面的區塊 (change\ notes/20260819/old_storeis_style.jpg) 依照 change\ notes/20260819/new_stories_style.png 去修改
+6.index.html 中下面的區塊 (change\ notes/20260819/old_storeis_style.jpg) 依照 change\ notes/20260819/new_stories_style.png 配色與排版（不要有 icon or image) 而文字內容不變。
