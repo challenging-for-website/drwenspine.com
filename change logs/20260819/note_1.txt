@@ -1,6 +1,0 @@
-1.svc-fracture.html 參考 主治項目 壓迫性骨折.pdf 內容，完整呈現文檔內容到 HTML file，若有圖片，請以文繞圖的方式呈現(並靠左對齊)。 
-2.tx-cement.html參考 >> 把 專業治療骨水泥手術.pdf 內容，完整呈現文檔內容到 HTML file，若有圖片，請以文繞圖的方式呈現(並靠左對齊)。
-3.tx-lumbar.html >> 第一張的照片(tx-lumbar-hero.jpg)，以文繞圖的方式呈現在 HTML 檔案中。
-4.story-lumbar.html >> 把 治療故事_腰椎微創手術案例.pdf 內容，完整呈現文檔內容到 HTML file，若有圖片，請以文繞圖的方式呈現(並靠左對齊)。
-5.story-cervical.html >> 把 案例分享頸椎微創手術案例.pdf 內容，完整地呈現在 HTML file 裡面，若有圖片，請以文繞圖的方式呈現(並靠左對齊)。
-6.index.html 中下面的區塊 (change\ notes/20260819/old_storeis_style.jpg) 依照 change\ notes/20260819/new_stories_style.png 配色與排版（不要有 icon or image) 而文字內容不變。
