@@ -1,0 +1,52 @@
+/*
+ * Treatment story page styles
+ * The shared site shell is loaded from site.css first.
+ */
+
+/* ===== Hero and article layout ===== */
+.hero{background:linear-gradient(120deg,var(--dark),var(--navy),#008b8b);color:#fff;padding:64px 20px;}
+.hero-inner{max-width:900px;margin:auto;}
+.crumb{color:#cfe4f5;font-size:.85rem;margin-bottom:18px;}
+.hero h1{font-size:2.5rem;line-height:1.4;}
+.hero p{color:#cfe4f5;margin-top:10px;}
+.layout{max-width:1000px;margin:auto;padding:48px 24px;}
+.layout article{max-width:780px;margin:auto;}
+
+/* ===== Story content ===== */
+h2{color:var(--navy);font-size:1.55rem;border-left:5px solid var(--teal);padding-left:14px;margin:40px 0 14px;}
+h2:first-child{margin-top:0;}
+p{margin-bottom:15px;}
+ul{list-style:none;margin:10px 0 22px;}
+article li{padding:7px 0 7px 28px;border-bottom:1px dashed #e8edf2;position:relative;}
+article li:before{content:"✓";color:var(--teal);position:absolute;left:2px;font-weight:bold;}
+figure{margin:28px 0;}
+figure img{width:100%;border-radius:14px;box-shadow:var(--shadow);}
+figcaption{color:var(--muted);font-size:.85rem;line-height:1.7;margin-top:8px;text-align:center;}
+.story-figure-left{float:left;width:min(44%,340px);margin:4px 30px 22px 0;}
+.story-figure-left img{width:100%;}
+.story-figure-left figcaption{text-align:left;font-size:.8rem;}
+.story-figure{float:left;width:min(42%,320px);margin:4px 0 22px 30px;}
+.story-figure.left{float:left;margin:4px 30px 22px 0;}
+.story-figure img{width:100%;}
+.story-figure figcaption{text-align:left;font-size:.8rem;}
+.story-clear{clear:both;}
+.warn{background:#fff3f0;border:1px solid #f3c1b4;color:#a4402a;border-radius:12px;padding:16px 20px;margin:20px 0;}
+.note{background:#fff8e6;border:1px solid #e8d18a;border-radius:12px;padding:16px 20px;margin:25px 0;}
+.close{color:#008b8b;text-align:center;font-weight:bold;font-size:1.2rem;margin-top:28px;}
+
+/* ===== CTA and footer ===== */
+.cta{background:linear-gradient(120deg,#008b8b,#00a8a8);color:#fff;text-align:center;padding:45px 20px;}
+.cta a{display:inline-block;background:var(--gold);color:var(--dark);font-weight:bold;border-radius:99px;padding:12px 28px;margin:8px;}
+footer{background:var(--dark);color:#9db4c8;text-align:center;padding:28px 20px;font-size:.85rem;}
+
+
+@media (max-width:760px){
+  .hero h1{font-size:1.7rem;}
+  .nav{padding:0 20px;}
+  .layout{padding:30px 20px;}
+  .story-figure-left,
+  .story-figure,
+  .story-figure.left{float:none;width:min(100%,460px);margin:28px auto;}
+  .story-figure-left figcaption,
+  .story-figure figcaption{text-align:center;}
+}
