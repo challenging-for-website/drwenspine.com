@@ -22,7 +22,8 @@ article figure figcaption{color:var(--muted);font-size:.85rem;line-height:1.7;ma
 
   /* ===== 主體：左文右欄 ===== */
   .layout{max-width:1240px;margin:0 auto;padding:52px 32px 20px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:56px;align-items:start;}
-  @media (max-width:980px){ .layout{grid-template-columns:1fr;padding:26px 20px 10px;gap:28px;} }
+  .layout > article{min-width:0;}
+  @media (max-width:980px){ .layout{grid-template-columns:minmax(0,1fr);padding:26px 20px 10px;gap:28px;} .layout > article{width:100%;} }
 
   article h2{color:var(--navy);font-size:1.55rem;margin:42px 0 14px;padding-left:16px;border-left:5px solid var(--teal);letter-spacing:.04em;line-height:1.5;}
   article h2:first-child{margin-top:0;}
