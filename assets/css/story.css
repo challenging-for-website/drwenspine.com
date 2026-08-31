@@ -45,6 +45,7 @@ figcaption{color:var(--muted);font-size:.85rem;line-height:1.7;margin-top:8px;te
 .story-figure-left{float:left;width:min(44%,340px);margin:4px 30px 22px 0;}
 .story-figure-left img{width:100%;}
 .story-figure-left figcaption{text-align:left;font-size:.8rem;}
+.story-cervical-disc-postop{width:100%;}
 .story-figure{float:left;width:min(42%,320px);margin:4px 0 22px 30px;}
 .story-figure.left{float:left;margin:4px 30px 22px 0;}
 .story-figure img{width:100%;}
@@ -66,7 +67,8 @@ footer{background:var(--dark);color:#9db4c8;text-align:center;padding:28px 20px;
   .layout{padding:30px 20px;}
   .story-figure-left,
   .story-figure,
-  .story-figure.left{float:none;width:min(100%,460px);margin:28px auto;}
+  .story-figure.left,
+  .story-cervical-disc-postop{float:none;width:min(100%,460px);margin:28px auto;}
   .story-figure-left figcaption,
   .story-figure figcaption{text-align:center;}
 }
