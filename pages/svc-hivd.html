@@ -62,12 +62,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="tx-osteo.html">骨質疏鬆與骨折風險治療</a></li>
           </ul>
         </li>
-        <li class="has-sub"><a href="../index.html#stories">治療故事</a>
+                <li class="has-sub"><a href="../index.html#stories">治療故事</a>
           <ul class="site-dropdown">
             <li><a href="story-lumbar.html">腰椎微創手術案例</a></li>
             <li><a href="story-cervical.html">頸椎微創手術案例</a></li>
             <li><a href="story-cement.html">骨水泥手術案例</a></li>
-            <li><a href="story-cervical-disc-1.html">頸椎人工椎間盤案例</a></li>
+            <li class="has-sub story-case-group"><a href="../index.html#stories">頸椎人工椎間盤案例</a>
+              <ul class="site-dropdown">
+                <li><a href="story-cervical-disc-1.html">頸椎人工椎間盤案例</a></li>
+                <li><a href="story-cervical-disc-2.html">頸椎人工椎間盤案例-2</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="../index.html#clinics" class="nav-cta">預約諮詢</a></li>
@@ -193,6 +198,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 (function(){
   function isMobile(){ return window.matchMedia('(max-width:900px)').matches; }
+  function closeBranch(branch){
+    branch.classList.remove('open');
+    branch.querySelectorAll('li.has-sub.open').forEach(function(child){ child.classList.remove('open'); });
+  }
   document.querySelectorAll('nav li.has-sub > a').forEach(function(a){
     a.addEventListener('click', function(e){
       if(!isMobile()) return;
@@ -200,7 +209,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(!li.classList.contains('open')){
         e.preventDefault();
         e.stopPropagation();
-        document.querySelectorAll('nav li.has-sub.open').forEach(function(o){ if(o!==li) o.classList.remove('open'); });
+        Array.prototype.forEach.call(li.parentElement.children, function(sibling){
+          if(sibling!==li && sibling.classList.contains('has-sub')) closeBranch(sibling);
+        });
         li.classList.add('open');
       }
     }, true);
