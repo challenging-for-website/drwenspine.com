@@ -55,11 +55,20 @@ header nav li.has-sub > a::after{content:" ▾";font-size:.75em;color:var(--teal
 .site-dropdown{display:none;position:absolute;top:100%;left:0;min-width:260px;background:var(--navy-dark);border-top:3px solid var(--teal);box-shadow:0 14px 30px rgba(0,0,0,.25);list-style:none;z-index:300;padding:0;margin:0;border-radius:0 0 10px 10px;overflow:hidden;}
 .site-dropdown li{margin:0;}
 .site-dropdown a{display:block;padding:13px 20px;color:#e8f1f8;font-size:.9rem;border-radius:0;border-bottom:1px solid rgba(255,255,255,.08);}
-.site-dropdown li:last-child a{border-bottom:none;}
+.site-dropdown > li:last-child > a{border-bottom:none;}
 .site-dropdown a:hover{background:rgba(0,168,168,.22);color:#fff;padding-left:24px;}
 @media (min-width:901px){
   header nav li.has-sub:hover > .site-dropdown,
   header nav li.has-sub:focus-within > .site-dropdown{display:block;}
+  header nav > ul > li.has-sub > .site-dropdown{overflow:visible;}
+  .site-dropdown .story-case-group > .site-dropdown{
+    top:0;
+    left:auto;
+    right:100%;
+    border-top:0;
+    border-left:3px solid var(--teal);
+    border-radius:0 10px 10px 10px;
+  }
 }
 
 /* ===== Mobile bottom tab bar ===== */
@@ -73,6 +82,18 @@ header nav li.has-sub > a::after{content:" ▾";font-size:.75em;color:var(--teal
   header nav > ul{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;padding:10px 16px 18px;box-shadow:0 10px 20px rgba(0,0,0,.1);max-height:calc(100vh - 64px);overflow-y:auto;}
   header nav > ul.open{display:flex;}
   .site-dropdown{position:static;display:none;min-width:0;border-radius:10px;margin:2px 0 8px;}
+  .site-dropdown .story-case-group > .site-dropdown{
+    position:static;
+    top:auto;
+    left:auto;
+    min-width:0;
+    margin:2px 0 8px 12px;
+    border-top:0;
+    border-left:3px solid var(--teal);
+    border-radius:0;
+    box-shadow:none;
+    overflow:visible;
+  }
   header nav li.has-sub.open > .site-dropdown{display:block;}
   .menu-btn{display:block;}
   .tabbar{display:flex;}

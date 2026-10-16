@@ -62,12 +62,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="tx-osteo.html">骨質疏鬆與骨折風險治療</a></li>
           </ul>
         </li>
-        <li class="has-sub"><a href="../index.html#stories">治療故事</a>
+                <li class="has-sub"><a href="../index.html#stories">治療故事</a>
           <ul class="site-dropdown">
             <li><a href="story-lumbar.html">腰椎微創手術案例</a></li>
             <li><a href="story-cervical.html">頸椎微創手術案例</a></li>
             <li><a href="story-cement.html">骨水泥手術案例</a></li>
-            <li><a href="story-cervical-disc.html">頸椎人工椎間盤案例</a></li>
+            <li class="has-sub story-case-group"><a href="../index.html#stories">頸椎人工椎間盤案例</a>
+              <ul class="site-dropdown">
+                <li><a href="story-cervical-disc-1.html">頸椎人工椎間盤案例-1</a></li>
+                <li><a href="story-cervical-disc-2.html">頸椎人工椎間盤案例-2</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="../index.html#clinics" class="nav-cta">預約諮詢</a></li>
@@ -153,8 +158,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="lst"><a href="svc-fracture.html">脊椎壓迫性骨折</a><a href="svc-stenosis.html">腰椎椎管狹窄</a><a href="svc-hivd.html">椎間盤突出與骨刺</a><a href="svc-slip.html">腰椎滑脫</a><a href="svc-cervical.html">頸椎神經壓迫</a><a href="svc-carpal.html">腕隧道症候群</a><a class="now" href="svc-osteo.html">▸ 骨質疏鬆與脊椎骨折風險</a><a href="svc-trauma.html">脊椎外傷</a></div>
     </div>
     <div class="side-card">
+      <h3>治療方式一覽</h3>
+      <div class="lst"><a href="tx-lumbar.html">微創腰椎手術</a><a href="tx-cervical.html">微創頸椎手術</a><a href="tx-cement.html">骨水泥手術</a><a href="tx-block.html">神經阻斷及疼痛介入治療</a><a href="tx-carpal.html">微創腕隧道神經鬆解術</a><a href="tx-osteo.html">骨質疏鬆與骨折風險治療</a></div>
+    </div>
+    <div class="side-card">
       <h3>治療故事</h3>
-      <div class="lst"><a href="story-lumbar.html">腰椎微創手術案例</a><a href="story-cervical.html">頸椎微創手術案例</a><a href="story-cement.html">骨水泥手術案例</a><a href="story-cervical-disc.html">頸椎人工椎間盤案例</a></div>
+      <div class="lst"><a href="story-lumbar.html">腰椎微創手術案例</a><a href="story-cervical.html">頸椎微創手術案例</a><a href="story-cement.html">骨水泥手術案例</a><a href="story-cervical-disc-1.html">頸椎人工椎間盤案例-1</a><a href="story-cervical-disc-2.html">頸椎人工椎間盤案例-2</a></div>
     </div>
     <div class="side-card side-quote">
       「不該開的刀，我不開；<br>該開的刀，我做到最好。」<br>—— 文宏裕醫師
@@ -191,6 +200,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 (function(){
   function isMobile(){ return window.matchMedia('(max-width:900px)').matches; }
+  function closeBranch(branch){
+    branch.classList.remove('open');
+    branch.querySelectorAll('li.has-sub.open').forEach(function(child){ child.classList.remove('open'); });
+  }
   document.querySelectorAll('nav li.has-sub > a').forEach(function(a){
     a.addEventListener('click', function(e){
       if(!isMobile()) return;
@@ -198,7 +211,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(!li.classList.contains('open')){
         e.preventDefault();
         e.stopPropagation();
-        document.querySelectorAll('nav li.has-sub.open').forEach(function(o){ if(o!==li) o.classList.remove('open'); });
+        Array.prototype.forEach.call(li.parentElement.children, function(sibling){
+          if(sibling!==li && sibling.classList.contains('has-sub')) closeBranch(sibling);
+        });
         li.classList.add('open');
       }
     }, true);
